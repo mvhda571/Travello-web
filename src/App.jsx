@@ -2,6 +2,8 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Services from "./components/Services";
 import Destinations from "./components/Destinations";
+import BookTrip from "./components/BookTrip";
+import Testimonials from "./components/Testimonials";
 
 function App() {
   return (
@@ -10,6 +12,8 @@ function App() {
       <Hero />
       <Services />
       <Destinations />
+      <BookTrip />
+      <Testimonials />
     </main>
   );
 }
