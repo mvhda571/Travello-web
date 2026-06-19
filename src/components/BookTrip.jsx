@@ -98,7 +98,6 @@ function BookTrip() {
           </div>
         </div>
 
-        {/* Right Side - Trip Card */}
         <div className="flex justify-center lg:justify-end">
           <div className="w-full max-w-xs overflow-hidden rounded-3xl bg-white shadow-lg">
             <img
