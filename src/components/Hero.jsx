@@ -4,21 +4,21 @@ import heroBg from "../assets/herobg.svg";
 import { useEffect, useRef } from "react";
 
 function Hero() {
-  const bgRef      = useRef(null);
+  const bgRef = useRef(null);
   const subtitleRef = useRef(null);
-  const headingRef  = useRef(null);
-  const descRef     = useRef(null);
-  const btnsRef     = useRef(null);
-  const imageRef    = useRef(null);
+  const headingRef = useRef(null);
+  const descRef = useRef(null);
+  const btnsRef = useRef(null);
+  const imageRef = useRef(null);
 
   useEffect(() => {
     const items = [
-      { ref: bgRef,       delay: 0,   from: "translateX(60px)"  },
-      { ref: imageRef,    delay: 200, from: "translateX(40px)"  },
-      { ref: subtitleRef, delay: 300, from: "translateY(24px)"  },
-      { ref: headingRef,  delay: 420, from: "translateY(28px)"  },
-      { ref: descRef,     delay: 540, from: "translateY(20px)"  },
-      { ref: btnsRef,     delay: 660, from: "translateY(20px)"  },
+      { ref: bgRef, delay: 0, from: "translateX(60px)" },
+      { ref: imageRef, delay: 200, from: "translateX(40px)" },
+      { ref: subtitleRef, delay: 300, from: "translateY(24px)" },
+      { ref: headingRef, delay: 420, from: "translateY(28px)" },
+      { ref: descRef, delay: 540, from: "translateY(20px)" },
+      { ref: btnsRef, delay: 660, from: "translateY(20px)" },
     ];
 
     items.forEach(({ ref, delay, from }) => {
@@ -26,7 +26,8 @@ function Hero() {
       ref.current.style.opacity = "0";
       ref.current.style.transform = from;
       setTimeout(() => {
-        ref.current.style.transition = "opacity 0.7s ease, transform 0.7s cubic-bezier(0.22,1,0.36,1)";
+        ref.current.style.transition =
+          "opacity 0.7s ease, transform 0.7s cubic-bezier(0.22,1,0.36,1)";
         ref.current.style.opacity = "1";
         ref.current.style.transform = "translate(0, 0)";
       }, delay);
@@ -34,7 +35,10 @@ function Hero() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-white" style={{ minHeight: "100vh" }}>
+    <section
+      className="relative overflow-hidden bg-white"
+      style={{ minHeight: "100vh" }}
+    >
       <img
         ref={bgRef}
         src={heroBg}
@@ -43,7 +47,6 @@ function Hero() {
         style={{ width: "50%", maxWidth: "720px" }}
       />
 
-
       <div
         className="relative z-10 mx-auto grid grid-cols-1 lg:grid-cols-2"
         style={{
@@ -51,7 +54,7 @@ function Hero() {
           minHeight: "100vh",
           paddingLeft: "clamp(1.5rem, 5vw, 6rem)",
           paddingRight: "clamp(1.5rem, 5vw, 6rem)",
-          paddingTop: "80px",   /* navbar height */
+          paddingTop: "80px" /* navbar height */,
           alignItems: "center",
         }}
       >
@@ -59,7 +62,11 @@ function Hero() {
           <p
             ref={subtitleRef}
             className="font-bold uppercase tracking-wide"
-            style={{ color: "#DF6951", fontSize: "clamp(13px, 1.2vw, 18px)", marginBottom: "1.25rem" }}
+            style={{
+              color: "#DF6951",
+              fontSize: "clamp(13px, 1.2vw, 18px)",
+              marginBottom: "1.25rem",
+            }}
           >
             Best destinations around the world
           </p>
@@ -87,8 +94,8 @@ function Hero() {
             }}
           >
             Built Wicket longer admire do barton vanity itself do in it.
-            Preferred to sportsmen it engrossed listening. Park gate sell
-            they west hard for the.
+            Preferred to sportsmen it engrossed listening. Park gate sell they
+            west hard for the.
           </p>
 
           <div
@@ -104,17 +111,20 @@ function Hero() {
                 padding: "16px 32px",
                 fontSize: "15px",
                 boxShadow: "0 20px 35px rgba(241,165,1,0.25)",
-                transition: "transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease",
+                transition:
+                  "transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease",
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = "#d49200";
                 e.currentTarget.style.transform = "translateY(-3px)";
-                e.currentTarget.style.boxShadow = "0 28px 42px rgba(241,165,1,0.35)";
+                e.currentTarget.style.boxShadow =
+                  "0 28px 42px rgba(241,165,1,0.35)";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.background = "#F1A501";
                 e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow = "0 20px 35px rgba(241,165,1,0.25)";
+                e.currentTarget.style.boxShadow =
+                  "0 20px 35px rgba(241,165,1,0.25)";
               }}
             >
               Find out more
@@ -122,7 +132,13 @@ function Hero() {
 
             <button
               className="flex items-center font-medium"
-              style={{ gap: "1.1rem", color: "#686D77", fontSize: "17px", background: "none", border: "none" }}
+              style={{
+                gap: "1.1rem",
+                color: "#686D77",
+                fontSize: "17px",
+                background: "none",
+                border: "none",
+              }}
             >
               <span
                 className="grid place-items-center rounded-full text-white"
@@ -136,11 +152,13 @@ function Hero() {
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = "scale(1.12) rotate(12deg)";
-                  e.currentTarget.style.boxShadow = "0 20px 36px rgba(223,105,81,0.5)";
+                  e.currentTarget.style.boxShadow =
+                    "0 20px 36px rgba(223,105,81,0.5)";
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = "scale(1) rotate(0deg)";
-                  e.currentTarget.style.boxShadow = "0 15px 30px rgba(223,105,81,0.35)";
+                  e.currentTarget.style.boxShadow =
+                    "0 15px 30px rgba(223,105,81,0.35)";
                 }}
               >
                 <FaPlay size={13} style={{ marginLeft: "3px" }} />
